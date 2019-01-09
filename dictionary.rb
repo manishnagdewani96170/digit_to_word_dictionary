@@ -27,5 +27,21 @@ class NumberToWordMap
     }
     number.chars.map{|digit| arr[digit]}
   end
+
+  def manipulate_result(number)
+    time_start = Time.now()
+    return [] if number.nil? || number.length != 10 || number.split('').select{|a|(a.to_i == 0 || a.to_i == 1)}.length > 0
+    dictionary, keys = {}, []
+    dictionary = read_from_dictionary
+    keys = format_string(number)
+    results = {}
+    final_result = []
+    total_number = keys.length - 1 # total numbers
+  end
 end
-  
+
+n = NumberToWordMap.new
+result = n.manipulate_result("6686787825")
+print result
+result = n.manipulate_result("2282668687")
+print result
