@@ -53,7 +53,9 @@ class NumberToWordMap
       final_result += (results[i].first).product(results[i].last) if !results[i][1].nil?
       puts "total_number #{i}"
     end
-   
+    final_result << (keys.shift.product(*keys).map(&:join) & dictionary[11]).join(", ") # matche with all character
+    time_end = Time.now()
+    puts "Time #{time_end.to_f - time_start.to_f}"
     final_result
   end
 end
